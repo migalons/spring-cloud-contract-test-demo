@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: events
+  name: events
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: events
+  strategy: { }
+  template:
+    metadata:
+      labels:
+        app: events
+    spec:
+      containers:
+        - image: spring-contract-test-demo/events:1.0.0-SNAPSHOT
+          name: events
+          resources: { }
+          ports:
+            - containerPort: 8080

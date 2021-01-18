@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  events:
+    image: spring-contract-test-demo/events:1.0.0-SNAPSHOT
+    ports:
+      - "8080:8080"
+    networks:
+      spring-contract-test-demo:
+        aliases:
+          - events.sctd.internal
+  sponsors:
+    image: spring-contract-test-demo/sponsors:1.0.0-SNAPSHOT
+    ports:
+      - "8081:8080"
+    networks:
+      spring-contract-test-demo:
+        aliases:
+          - sponsors.sctd.internal
+  payments:
+    image: spring-contract-test-demo/payments:1.0.0-SNAPSHOT
+    ports:
+      - "8082:8080"
+    networks:
+      spring-contract-test-demo:
+        aliases:
+          - payments.sctd.internal
+networks:
+  spring-contract-test-demo:
+

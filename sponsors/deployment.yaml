@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sponsors
+  name: sponsors
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sponsors
+  strategy: { }
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sponsors
+    spec:
+      containers:
+        - image: spring-contract-test-demo/sponsors:1.0.0-SNAPSHOT
+          name: sponsors
+          resources: { }
+          ports:
+            - containerPort: 8080
